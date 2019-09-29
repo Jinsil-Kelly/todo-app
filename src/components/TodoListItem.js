@@ -1,7 +1,7 @@
 import React from 'react';
 
-const App = () => {
+const TodoListItem = () => {
   return <div>TODO APP</div>
 };
 
-export default App;
+export default TodoListItem;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const App = () => {
+const TodoInsert = () => {
   return <div>TODO APP</div>
 };
 
-export default App;
+export default TodoInsert;
