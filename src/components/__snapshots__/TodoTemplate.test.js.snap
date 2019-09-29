@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoTemplate /> matches snapshot 1`] = `
+<div>
+  <div
+    class="TodoTemplate"
+  >
+    <div
+      class="app-title"
+    >
+      일정 관리
+    </div>
+    <div
+      class="content"
+    >
+      hohoho
+    </div>
+  </div>
+</div>
+`;
