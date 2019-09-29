@@ -11,6 +11,6 @@ describe('<TodoTemplate />', () => {
   });
   it('shows the props correctly', () => {
     const utils = render(<TodoTemplate children="hohoho" />);
-    utils.getByText('hohoho'); // velopert 라는 텍스트를 가진 엘리먼트가 있는지 확인
+    utils.getByText('hohoho');
   });
 });
