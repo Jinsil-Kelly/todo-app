@@ -1,18 +1,19 @@
 import React, { useState, useCallback, useRef } from 'react';
 import TodoTemplate from './TodoTemplate';
 import TodoInsert from './TodoInsert';
+import TodoList from './TodoList';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([
     {
       id: 1,
       text: 'TDD 배우기',
-      done: true
+      checked: true
     },
     {
       id: 2,
       text: 'react-testing-library 배우기',
-      done: true
+      checked: false
     }
   ]);
   const nextId = useRef(3); // 새로 추가 할 항목에서 사용 할 id
@@ -24,7 +25,7 @@ const TodoApp = () => {
         todos.concat({
           id: nextId.current,
           text,
-          done: false
+          checked: false
         })
       );
       // nextId 값에 1 더하기
@@ -32,9 +33,28 @@ const TodoApp = () => {
     },
     [todos]
   );
+
+  const onToggle = useCallback(
+    id => {
+      setTodos(
+        todos.map(todo =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
+      );    },
+    [todos]
+  );
+
+  const onRemove = useCallback(
+    id => {
+      setTodos(todos.filter(todo => todo.id !== id));
+    },
+    [todos]
+  );
+
   return (<TodoTemplate>
-    <TodoInsert/>
-    {/*<TodoInsert onInsert={onInsert}/>*/}
+    {/*<TodoInsert/>*/}
+    <TodoInsert onInsert={onInsert}/>
+    <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove}/>
   </TodoTemplate>)
 };
 

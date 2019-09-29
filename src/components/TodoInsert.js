@@ -11,7 +11,7 @@ const TodoInsert = ({onInsert}) => {
 
   const onSubmit = useCallback(
     e => {
-      onInsert(value);
+      value.toString().trim().length!==0 ?  onInsert(value):alert('Enter something');
       setValue('');
       e.preventDefault(); // 새로고침을 방지함
     },
@@ -22,9 +22,7 @@ const TodoInsert = ({onInsert}) => {
     <button type='submit' data-testid="addTodoBtn"><MdAdd/></button>
   </form>)
 };
-// TodoInsert.defalutProps={
-//   onInsert:(value)=>console.log(`${value} is inserted...!`)
-// }
+
 export default TodoInsert;
 
 
