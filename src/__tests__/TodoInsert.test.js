@@ -1,6 +1,6 @@
-import React from 'react'
-import { render, cleanup,fireEvent  } from '@testing-library/react'
-import TodoInsert from './TodoInsert'
+import React from 'react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
+import TodoInsert from '../components/TodoInsert';
 
 afterEach(cleanup);
 

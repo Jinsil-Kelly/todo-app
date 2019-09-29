@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import TodoTemplate from './TodoTemplate';
 import TodoInsert from './TodoInsert';
 import TodoList from './TodoList';
@@ -22,16 +22,15 @@ const TodoApp = () => {
     text => {
       // 새 항목 추가 후
       setTodos(
-        todos.concat({
+        todos => todos.concat({
           id: nextId.current,
           text,
-          checked: false
-        })
+          checked: false,
+        }),
       );
       // nextId 값에 1 더하기
       nextId.current += 1;
-    },
-    [todos]
+    }
   );
 
   const onToggle = useCallback(

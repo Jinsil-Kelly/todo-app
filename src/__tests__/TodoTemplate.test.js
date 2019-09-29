@@ -1,8 +1,8 @@
-import React from 'react'
-import { render, cleanup } from '@testing-library/react'
-import TodoTemplate from './TodoTemplate'
+import React from 'react';
+import { cleanup, render } from '@testing-library/react';
+import TodoTemplate from '../components/TodoTemplate';
 
-afterEach(cleanup)
+afterEach(cleanup);
 
 describe('<TodoTemplate />', () => {
   it('matches snapshot', () => {
