@@ -7,8 +7,12 @@ exports[`<TodoInsert /> matches snapshot 1`] = `
   >
     <input
       placeholder="Write what you want to do"
+      value=""
     />
-    <button>
+    <button
+      data-testid="addTodoBtn"
+      type="submit"
+    >
       <svg
         fill="currentColor"
         height="1em"
