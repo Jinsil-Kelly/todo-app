@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoApp /> matches snapshot 1`] = `
+<div>
+  <div
+    class="TodoTemplate"
+    data-testid="TodoTemplate"
+  >
+    <div
+      class="app-title"
+    >
+      TODO LIST
+    </div>
+    <div
+      class="content"
+    >
+      <form
+        class="TodoInsert"
+        data-testid="TodoInsert"
+      >
+        <input
+          placeholder="Write what you want to do"
+          value=""
+        />
+        <button
+          data-testid="addTodoBtn"
+          type="submit"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+          </svg>
+        </button>
+      </form>
+      <div
+        data-testid="TodoList"
+      >
+        <div
+          aria-label="grid"
+          aria-readonly="true"
+          class="ReactVirtualized__Grid ReactVirtualized__List TodoList"
+          role="grid"
+          style="box-sizing: border-box; direction: ltr; height: 320px; position: relative; width: 512px; will-change: transform; overflow-x: hidden; overflow-y: hidden; outline: none;"
+          tabindex="0"
+        >
+          <div
+            class="ReactVirtualized__Grid__innerScrollContainer"
+            role="rowgroup"
+            style="width: auto; height: 114px; max-width: 512px; max-height: 114px; overflow: hidden; position: relative;"
+          >
+            <div
+              class="TodoListItem-virtualized"
+              style="height: 57px; left: 0px; position: absolute; top: 0px; width: 100%;"
+            >
+              <div
+                class="TodoListItem"
+              >
+                <div
+                  class="checkbox checked"
+                  data-testid="toggleBtn-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                    />
+                  </svg>
+                  <div
+                    class="text"
+                  >
+                    TDD 배우기
+                  </div>
+                </div>
+                <div
+                  class="remove"
+                  data-testid="removeBtn-1"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TodoListItem-virtualized"
+              style="height: 57px; left: 0px; position: absolute; top: 57px; width: 100%;"
+            >
+              <div
+                class="TodoListItem"
+              >
+                <div
+                  class="checkbox"
+                  data-testid="toggleBtn-2"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <div
+                    class="text"
+                  >
+                    react-testing-library 배우기
+                  </div>
+                </div>
+                <div
+                  class="remove"
+                  data-testid="removeBtn-2"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
