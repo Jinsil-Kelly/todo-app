@@ -4,6 +4,7 @@ exports[`<TodoInsert /> matches snapshot 1`] = `
 <div>
   <form
     class="TodoInsert"
+    data-testid="TodoInsert"
   >
     <input
       placeholder="Write what you want to do"

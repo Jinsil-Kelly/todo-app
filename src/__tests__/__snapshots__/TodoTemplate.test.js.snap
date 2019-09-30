@@ -4,6 +4,7 @@ exports[`<TodoTemplate /> matches snapshot 1`] = `
 <div>
   <div
     class="TodoTemplate"
+    data-testid="TodoTemplate"
   >
     <div
       class="app-title"

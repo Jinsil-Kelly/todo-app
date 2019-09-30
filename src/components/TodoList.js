@@ -8,8 +8,9 @@ const TodoList = ({ todos, onToggle, onRemove }) => {
     return (<TodoListItem todo={todo} key={key} style={style} onToggle={onToggle} onRemove={onRemove}/>);
   }, [onRemove, onToggle, todos]);
 
-  return (<List height={320} width={512} rowCount={todos.length} className="TodoList" rowHeight={57} list={todos}
-                style={{ outline: 'none' }} rowRenderer={rowRenderer}/>);
+  return (<div data-testid='TodoList'><List
+    height={320} width={512} rowCount={todos.length} className="TodoList" rowHeight={57} list={todos}
+    style={{ outline: 'none' }} rowRenderer={rowRenderer}/></div>);
 
 };
 

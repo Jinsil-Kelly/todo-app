@@ -16,7 +16,8 @@ const TodoInsert = ({ onInsert }) => {
     },
     [onInsert, value],
   );
-  return (<form onSubmit={onSubmit} className="TodoInsert">
+  return (<form onSubmit={onSubmit} className="TodoInsert" data-testid='TodoInsert'
+  >
     <input placeholder="Write what you want to do" value={value} onChange={onChange}/>
     <button type='submit' data-testid="addTodoBtn"><MdAdd/></button>
   </form>);
