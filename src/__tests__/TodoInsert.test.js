@@ -13,12 +13,12 @@ describe('<TodoInsert />', () => {
     return {
       ...utils,
       inputNode,
-      btnNode
+      btnNode,
     };
   };
 
   it('matches snapshot', () => {
-    const utils = render(<TodoInsert />);
+    const utils = render(<TodoInsert/>);
     expect(utils.container).toMatchSnapshot();
   });
   it('has input and a button', () => {
@@ -33,8 +33,8 @@ describe('<TodoInsert />', () => {
 
     fireEvent.change(inputNode, {
       target: {
-        value: 'To make TDD'
-      }
+        value: 'To make TDD',
+      },
     });
     // expect(inputNode).toHaveAttribute('value', 'To make TDD');
     // or
@@ -43,11 +43,11 @@ describe('<TodoInsert />', () => {
 
   it('calls onInsert and clears input when input is not empty and btn is clicked', () => {
     const onInsert = jest.fn();
-    const { inputNode,btnNode } = setup({onInsert});  //props가 필요할 땐 요렇게 넣어주어먀함
+    const { inputNode, btnNode } = setup({ onInsert });  //props가 필요할 땐 요렇게 넣어주어먀함
     fireEvent.change(inputNode, {
       target: {
-        value: 'TDD 배우기'
-      }
+        value: 'TDD 배우기',
+      },
     });
     fireEvent.click(btnNode);
     expect(onInsert).toBeCalledWith('TDD 배우기'); // onInsert 가 'TDD 배우기' 파라미터가 호출됐어야함
@@ -57,10 +57,10 @@ describe('<TodoInsert />', () => {
   it('does not call onInsert and showed alert msg when input is empty and btn is clicked', () => {
     window.alert = jest.fn();
     const onInsert = jest.fn();
-    const { inputNode,btnNode } = setup({onInsert});
+    const { inputNode, btnNode } = setup({ onInsert });
     expect(inputNode.value).toMatch('');
     fireEvent.click(btnNode);
-    expect( window.alert).toBeCalledWith('Enter something');
+    expect(window.alert).toBeCalledWith('Enter something');
     expect(onInsert).not.toBeCalled();
     expect(inputNode).toHaveAttribute('value', '');
   });

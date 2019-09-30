@@ -8,13 +8,13 @@ describe('<TodoListItem />', () => {
   const sampleTodo = {
     id: 1,
     text: 'TDD 배우기',
-    checked: false
+    checked: false,
   };
 
   const setup = (props = {}) => {
     const initialProps = { todo: sampleTodo };
     const utils = render(<TodoListItem {...initialProps} {...props} />);
-    const { getByText,getByTestId } = utils;
+    const { getByText, getByTestId } = utils;
     const todo = props.todo || initialProps.todo;
     const todoText = getByText(todo.text);
     const removeBtn = getByTestId(`removeBtn-${todo.id}`); // check if btn exists
@@ -23,12 +23,12 @@ describe('<TodoListItem />', () => {
       ...utils,
       todoText,
       removeBtn,
-      toggleBtn
+      toggleBtn,
     };
   };
 
   it('has todoText, toggleBtn and removeBtn', () => {
-    const { todoText, toggleBtn, removeBtn} = setup();
+    const { todoText, toggleBtn, removeBtn } = setup();
     expect(todoText).toBeTruthy();
     expect(removeBtn).toBeTruthy();
     expect(toggleBtn).toBeTruthy();
@@ -37,14 +37,14 @@ describe('<TodoListItem />', () => {
   it('shows line-through on the text when checkBox is checked', () => {
     const { toggleBtn } = setup({ todo: { ...sampleTodo, checked: true } });
     expect(toggleBtn).toHaveClass('checkbox');
-    expect(toggleBtn).toHaveClass('checked')
+    expect(toggleBtn).toHaveClass('checked');
 
   });
 
   it('does not show line-through on the text when checkBox is not checked', () => {
     const { toggleBtn } = setup({ todo: { ...sampleTodo, checked: false } });
     expect(toggleBtn).toHaveClass('checkbox');
-    expect(toggleBtn).not.toHaveClass('checked')
+    expect(toggleBtn).not.toHaveClass('checked');
   });
 
   it('calls onToggle', () => {

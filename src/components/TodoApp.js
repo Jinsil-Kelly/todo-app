@@ -8,13 +8,13 @@ const TodoApp = () => {
     {
       id: 1,
       text: 'TDD 배우기',
-      checked: true
+      checked: true,
     },
     {
       id: 2,
       text: 'react-testing-library 배우기',
-      checked: false
-    }
+      checked: false,
+    },
   ]);
   const nextId = useRef(3); // 새로 추가 할 항목에서 사용 할 id
 
@@ -55,7 +55,7 @@ const TodoApp = () => {
     {/*<TodoInsert/>*/}
     <TodoInsert onInsert={onInsert}/>
     <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove}/>
-  </TodoTemplate>)
+  </TodoTemplate>);
 };
 
 export default TodoApp;

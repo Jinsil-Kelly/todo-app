@@ -10,16 +10,16 @@ const TodoInsert = ({ onInsert }) => {
 
   const onSubmit = useCallback(
     e => {
-      value.toString().trim().length!==0 ?  onInsert(value):alert('Enter something');
+      value.toString().trim().length !== 0 ? onInsert(value) : alert('Enter something');
       setValue('');
       e.preventDefault(); // 새로고침을 방지함
     },
-    [onInsert, value]
+    [onInsert, value],
   );
   return (<form onSubmit={onSubmit} className="TodoInsert">
     <input placeholder="Write what you want to do" value={value} onChange={onChange}/>
     <button type='submit' data-testid="addTodoBtn"><MdAdd/></button>
-  </form>)
+  </form>);
 };
 
 export default TodoInsert;
