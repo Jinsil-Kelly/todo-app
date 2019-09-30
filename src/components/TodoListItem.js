@@ -1,5 +1,9 @@
 import React, { useCallback } from 'react';
-import { MdCheckBox, MdCheckBoxOutlineBlank, MdRemoveCircleOutline } from 'react-icons/md';
+import {
+  MdCheckBox,
+  MdCheckBoxOutlineBlank,
+  MdRemoveCircleOutline,
+} from 'react-icons/md';
 import cn from 'classnames';
 
 const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
@@ -14,7 +18,7 @@ const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
           className={cn('checkbox', { checked })}
           onClick={toggle}
         >
-          {checked ? <MdCheckBox/> : <MdCheckBoxOutlineBlank/>}
+          {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
           <div className="text">{text}</div>
         </div>
         <div
@@ -22,7 +26,7 @@ const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
           data-testid={`removeBtn-${id}`}
           onClick={remove}
         >
-          <MdRemoveCircleOutline/>
+          <MdRemoveCircleOutline />
         </div>
       </div>
     </div>

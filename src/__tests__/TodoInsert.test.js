@@ -18,7 +18,7 @@ describe('<TodoInsert />', () => {
   };
 
   it('matches snapshot', () => {
-    const utils = render(<TodoInsert/>);
+    const utils = render(<TodoInsert />);
     expect(utils.container).toMatchSnapshot();
   });
   it('has input and a button', () => {

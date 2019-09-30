@@ -6,25 +6,25 @@ afterEach(cleanup);
 
 describe('<TodoApp />', () => {
   it('matches snapshot', () => {
-    const utils = render(<TodoApp/>);
+    const utils = render(<TodoApp />);
     expect(utils.container).toMatchSnapshot();
   });
   it('renders TodoTemplate, TodoInsert and TodoList', () => {
-    const { getByTestId } = render(<TodoApp/>);
+    const { getByTestId } = render(<TodoApp />);
     getByTestId('TodoTemplate'); // TodoInsert 존재유무 확인
     getByTestId('TodoInsert'); // TodoInsert 존재유무 확인
     getByTestId('TodoList'); // TodoList 존재유무 확인
   });
 
   it('renders two defaults todos', () => {
-    const { getByText } = render(<TodoApp/>);
+    const { getByText } = render(<TodoApp />);
     getByText('TDD 배우기');
     getByText('react-testing-library 배우기');
   });
 
   it('creates new todo', () => {
     const { getByPlaceholderText, getByTestId, getByText } = render(
-      <TodoApp/>,
+      <TodoApp />,
     );
     // 이벤트를 발생시켜서 새 항목을 추가하면
     fireEvent.change(getByPlaceholderText('Write what you want to do'), {
@@ -38,7 +38,7 @@ describe('<TodoApp />', () => {
   });
 
   it('toggles todo', () => {
-    const { getByTestId } = render(<TodoApp/>);
+    const { getByTestId } = render(<TodoApp />);
     const toggleBtn = getByTestId(`toggleBtn-1`);
     expect(toggleBtn).toHaveClass('checked');
     expect(toggleBtn).toHaveClass('checkbox');
@@ -51,7 +51,7 @@ describe('<TodoApp />', () => {
   });
 
   it('removes todo', () => {
-    const { getByTestId, getByText } = render(<TodoApp/>);
+    const { getByTestId, getByText } = render(<TodoApp />);
     const todoText = getByText('TDD 배우기');
     const removeBtn = getByTestId(`removeBtn-1`);
     fireEvent.click(removeBtn);

@@ -6,11 +6,11 @@ afterEach(cleanup);
 
 describe('<TodoTemplate />', () => {
   it('matches snapshot', () => {
-    const utils = render(<TodoTemplate children="hohoho"/>);
+    const utils = render(<TodoTemplate children="hohoho" />);
     expect(utils.container).toMatchSnapshot();
   });
   it('shows the props correctly', () => {
-    const utils = render(<TodoTemplate children="hohoho"/>);
+    const utils = render(<TodoTemplate children="hohoho" />);
     utils.getByText('hohoho');
   });
 });
