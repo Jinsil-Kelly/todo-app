@@ -18,43 +18,37 @@ const TodoApp = () => {
   ]);
   const nextId = useRef(3); // 새로 추가 할 항목에서 사용 할 id
 
-  const onInsert = useCallback(
-    text => {
-      // 새 항목 추가 후
-      setTodos(
-        todos => todos.concat({
-          id: nextId.current,
-          text,
-          checked: false,
-        }),
-      );
-      // nextId 값에 1 더하기
-      nextId.current += 1;
-    }, [],
-  );
+  const onInsert = useCallback(text => {
+    // 새 항목 추가 후
+    setTodos(todos =>
+      todos.concat({
+        id: nextId.current,
+        text,
+        checked: false,
+      }),
+    );
+    // nextId 값에 1 더하기
+    nextId.current += 1;
+  }, []);
 
-  const onToggle = useCallback(
-    id => {
-      setTodos(todos =>
-        todos.map(todo =>
-          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
-        ),
-      );
-    },
-    [],
-  );
+  const onToggle = useCallback(id => {
+    setTodos(todos =>
+      todos.map(todo =>
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+      ),
+    );
+  }, []);
 
-  const onRemove = useCallback(
-    id => {
-      setTodos(todos => todos.filter(todo => todo.id !== id));
-    },
-    [],
-  );
+  const onRemove = useCallback(id => {
+    setTodos(todos => todos.filter(todo => todo.id !== id));
+  }, []);
 
-  return (<TodoTemplate>
-    <TodoInsert onInsert={onInsert}/>
-    <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove}/>
-  </TodoTemplate>);
+  return (
+    <TodoTemplate>
+      <TodoInsert onInsert={onInsert}/>
+      <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove}/>
+    </TodoTemplate>
+  );
 };
 
 export default TodoApp;

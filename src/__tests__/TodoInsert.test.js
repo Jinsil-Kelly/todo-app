@@ -8,7 +8,7 @@ describe('<TodoInsert />', () => {
   const setup = (props = {}) => {
     const utils = render(<TodoInsert {...props} />);
     const { getByTestId, getByPlaceholderText } = utils;
-    const inputNode = getByPlaceholderText('Write what you want to do');  // check if input exists
+    const inputNode = getByPlaceholderText('Write what you want to do'); // check if input exists
     const btnNode = getByTestId('addTodoBtn'); // check if btn exists
     return {
       ...utils,
@@ -43,7 +43,7 @@ describe('<TodoInsert />', () => {
 
   it('calls onInsert and clears input when input is not empty and btn is clicked', () => {
     const onInsert = jest.fn();
-    const { inputNode, btnNode } = setup({ onInsert });  //props가 필요할 땐 요렇게 넣어주어먀함
+    const { inputNode, btnNode } = setup({ onInsert }); //props가 필요할 땐 요렇게 넣어주어먀함
     fireEvent.change(inputNode, {
       target: {
         value: 'TDD 배우기',

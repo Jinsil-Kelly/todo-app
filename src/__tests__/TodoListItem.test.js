@@ -38,7 +38,6 @@ describe('<TodoListItem />', () => {
     const { toggleBtn } = setup({ todo: { ...sampleTodo, checked: true } });
     expect(toggleBtn).toHaveClass('checkbox');
     expect(toggleBtn).toHaveClass('checked');
-
   });
 
   it('does not show line-through on the text when checkBox is not checked', () => {

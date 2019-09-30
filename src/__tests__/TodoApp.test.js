@@ -23,7 +23,9 @@ describe('<TodoApp />', () => {
   });
 
   it('creates new todo', () => {
-    const { getByPlaceholderText, getByTestId, getByText } = render(<TodoApp/>);
+    const { getByPlaceholderText, getByTestId, getByText } = render(
+      <TodoApp/>,
+    );
     // 이벤트를 발생시켜서 새 항목을 추가하면
     fireEvent.change(getByPlaceholderText('Write what you want to do'), {
       target: {
