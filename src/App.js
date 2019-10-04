@@ -1,6 +1,6 @@
 import React from 'react';
-import TodoApp from './components/TodoApp';
 import './styles/main.scss';
+import TodosContainer from './containers/TodosContainer';
 
-const App = () => <TodoApp />;
+const App = () => <TodosContainer />;
 export default App;

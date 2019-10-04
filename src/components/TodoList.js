@@ -18,19 +18,20 @@ const TodoList = ({ todos, onToggle, onRemove }) => {
     },
     [onRemove, onToggle, todos],
   );
-
   return (
     <div data-testid="TodoList">
-      <List
-        height={320}
-        width={512}
-        rowCount={todos.length}
-        className="TodoList"
-        rowHeight={57}
-        list={todos}
-        style={{ outline: 'none' }}
-        rowRenderer={rowRenderer}
-      />
+      {!!todos && (
+        <List
+          height={320}
+          width={512}
+          rowCount={todos.length}
+          className="TodoList"
+          rowHeight={57}
+          list={todos}
+          style={{ outline: 'none' }}
+          rowRenderer={rowRenderer}
+        />
+      )}
     </div>
   );
 };

@@ -18,6 +18,7 @@ const TodoInsert = ({ onInsert }) => {
     },
     [onInsert, value],
   );
+
   return (
     <form onSubmit={onSubmit} className="TodoInsert" data-testid="TodoInsert">
       <input

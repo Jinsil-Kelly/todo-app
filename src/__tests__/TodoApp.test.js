@@ -1,6 +1,7 @@
 import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import TodoApp from '../components/TodoApp';
+import { todos } from './fixtures/todo';
 
 afterEach(cleanup);
 
@@ -17,7 +18,7 @@ describe('<TodoApp />', () => {
   });
 
   it('renders two defaults todos', () => {
-    const { getByText } = render(<TodoApp />);
+    const { getByText } = render(<TodoApp todos={todos} />);
     getByText('TDD 배우기');
     getByText('react-testing-library 배우기');
   });

@@ -1,27 +1,12 @@
 import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import TodoList from '../components/TodoList';
+import { todos } from './fixtures/todo';
 
 afterEach(cleanup);
 
 describe('<TodoList />', () => {
-  const sampleTodos = [
-    {
-      id: 1,
-      text: 'TDD-1',
-      checked: false,
-    },
-    {
-      id: 2,
-      text: 'TDD-2',
-      checked: false,
-    },
-    {
-      id: 3,
-      text: 'TDD-3',
-      checked: true,
-    },
-  ];
+  const sampleTodos = todos;
 
   const setup = (props = {}) => {
     const initialProps = { todos: sampleTodos };
