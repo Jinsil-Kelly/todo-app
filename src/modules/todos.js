@@ -16,18 +16,7 @@ export const toggle = createAction(TOGGLE, id => id);
 export const remove = createAction(REMOVE, id => id);
 
 const initialState = {
-  todos: [
-    // {
-    //   id: 1,
-    //   text: 'TDD 배우기',
-    //   checked: true,
-    // },
-    // {
-    //   id: 2,
-    //   text: 'react-testing-library 배우기',
-    //   checked: false,
-    // },
-  ],
+  todos: [],
 };
 const todos = handleActions(
   {
@@ -37,8 +26,9 @@ const todos = handleActions(
       }),
     [TOGGLE]: (state, { payload: id }) =>
       produce(state, draft => {
-        const todo = draft.todos.find(todo => todo.id === id);
-        todo.checked = !todo.checked;
+        draft.todos.find(el => {
+          if (el.id === id) el.checked = !el.checked;
+        });
       }),
     [REMOVE]: (state, { payload: id }) =>
       produce(state, draft => {
